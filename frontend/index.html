@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Acceso — Inmaculada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="app">
+
+<main class="container">
+  <div class="page stack">
+    <h1 class="page-title">Acceso</h1>
+
+    <div class="card stack" style="max-width:420px">
+      <label>
+        Usuario
+        <input id="usuario" type="text" placeholder="admin">
+      </label>
+
+      <div class="actions">
+        <button class="primary" onclick="login()">Entrar</button>
+      </div>
+
+      <p id="error" class="subtle" style="color:#b91c1c; display:none">
+        Usuario no válido
+      </p>
+    </div>
+  </div>
+</main>
+
+<script>
+function login() {
+  const user = document.getElementById('usuario').value.trim();
+  if (user === 'admin') {
+    window.location.href = 'menu.html';
+  } else {
+    document.getElementById('error').style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>

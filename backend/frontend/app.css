@@ -492,20 +492,32 @@ button[onclick*="view.html"], button[onclick*="/view.html"] {
   font-size: 16px;
 }
 
+/* ===================================================== */
+/* BOTÓN SALIR – DEFINITIVO, SEPARADO DEL MENÚ            */
+/* ===================================================== */
 
-/* Botón Salir más visible (botón o enlace) */
-.btn-logout{
+.header-inner{
+  gap: 18px;
+}
+
+/* Mantener menú agrupado */
+.header-inner .nav{
+  flex: 1;
+}
+
+/* Botón Salir como acción independiente */
+.header-inner .btn-logout{
+  margin-left: auto !important;
   background: #ffffff !important;
-  border-color: #64748b !important;
-  color: #0f172a !important;
+  color: #020617 !important;
+  border: 2px solid #020617 !important;
+  border-radius: 12px !important;
+  padding: 10px 18px !important;
   font-weight: 900 !important;
+  box-shadow: 0 6px 16px rgba(2,6,23,.18) !important;
 }
-a.btn-logout, a.btn.btn-logout{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none !important;
-}
-.btn-logout:hover{
-  border-color: #0f172a !important;
+
+/* Hover */
+.header-inner .btn-logout:hover{
+  background: #f1f5f9 !important;
 }

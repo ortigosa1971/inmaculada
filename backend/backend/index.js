@@ -4,7 +4,6 @@ import cors from "cors";
 import { Pool } from "pg";
 import path from "path";
 import { fileURLToPath } from "url";
-import { sendLowStockEmail } from "./mailer.js";
 
 dotenv.config();
 const app = express();
@@ -294,17 +293,6 @@ app.post("/api/salidas", async (req, res) => {
     );
 
     await client.query("COMMIT");
-
-    // Enviar alerta por email si alguno queda por debajo del stock mínimo (no bloquea la respuesta)
-    try {
-      const low = (after.rows || []).filter(r => Number(r.cantidad) < Number(r.stock_minimo));
-      if (low.length > 0) {
-        await sendLowStockEmail(low);
-      }
-    } catch (mailErr) {
-      console.error("MAILER ERROR (alerta stock mínimo):", mailErr?.message || mailErr);
-    }
-
     res.json({ ok: true, antibiograma_id, unidades, afectados: after.rows });
   } catch (e) {
     try { await client.query("ROLLBACK"); } catch {}

@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salida individual de antibióticos</title>
+  <title>Antibióticos</title>
   
   <link rel="stylesheet" href="/app.css" />
 <style>
-#bloqueListadoAntibioticos{display:none !important;}
+#bloqueRestarAntibiotico{display:none !important;}
+#bloqueListadoAntibioticos{display:block !important;}
 .nav-duplicado{display:none !important;}
 </style>
 </head>
@@ -17,15 +18,15 @@
   <div class="header-inner">
     <div class="brand">
       <span class="dot" aria-hidden="true"></span>
-      <h1>Salida individual</h1>
+      <h1>Antibióticos</h1>
     </div>
     <nav class="nav" aria-label="Navegación">
       <div class="tabs">
   <a href="/inicio.html" class="solo-admin">Configuración</a>
           <a href="/salida.html">Salidas</a>
           <a href="/view.html" class="solo-admin">Inventario</a>
-          <a href="/stock.html" class="active">Salida individual</a>
-          <a href="/antibioticos.html" class="solo-admin">Antibióticos</a>
+          <a href="/stock.html">Salida individual</a>
+          <a href="/antibioticos.html" class="active solo-admin">Antibióticos</a>
           <a href="/menu.html">Menú</a>
     
 </div>
@@ -40,7 +41,7 @@
 
 <main class="container wide">
   <div class="page stack">
-  <h1 class="page-title">Salida individual de antibióticos</h1>
+  <h1 class="page-title">Antibióticos</h1>
 <div class="grid">
       <section class="card" id="bloqueRestarAntibiotico">
         <div class="row nav-duplicado">
@@ -271,7 +272,7 @@
     window.location.href = '/index.html';
     return;
   }
-  const allowed = ["admin", "tecnico"];
+  const allowed = ["admin"];
   if (!allowed.includes(role)) {
     window.location.href = '/menu.html';
     return;

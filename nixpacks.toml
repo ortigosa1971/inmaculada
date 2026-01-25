@@ -1,6 +1,6 @@
 [phases.install]
 cmds = [
-  "cd backend && npm install --no-audit --no-fund"
+  "cd backend && npm ci --no-audit --no-fund"
 ]
 
 [start]

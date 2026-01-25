@@ -1,5 +1,5 @@
 {
-  "name": "almacen2",
+  "name": "inmaculada",
   "private": true,
   "scripts": {
     "start": "cd backend && npm start"
